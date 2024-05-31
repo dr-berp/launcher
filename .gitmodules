@@ -1,0 +1,6 @@
+[submodule "gateway"]
+	path = gateway
+	url = git@github.com:dr-berp/gateway.git
+[submodule "products"]
+	path = products
+	url = git@github.com:dr-berp/products.git
