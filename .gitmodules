@@ -4,3 +4,6 @@
 [submodule "products"]
 	path = products
 	url = git@github.com:dr-berp/products.git
+[submodule "pricing"]
+	path = pricing
+	url = git@github.com:dr-berp/pricing.git

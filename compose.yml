@@ -39,3 +39,27 @@ services:
       - 5432:5432
     env_file:
       - ./products/.env
+
+  pricing:
+    depends_on:
+      - pricing-db
+    build: ./pricing
+    volumes:
+      - ./pricing/src:/usr/src/app/src
+    command: pnpm start:dev
+    env_file:
+      - ./pricing/.env
+    environment:
+      - DATABASE_URL=postgresql://postgres:123123@pricing-db:5432/pricing
+      - NATS_SERVERS=nats://nats-server:4222
+
+  pricing-db:
+    container_name: pricing_db
+    image: postgres:16.3
+    restart: always
+    volumes:
+      - ./pricing/postgres:/var/lib/postgresql/data
+    ports:
+      - 5433:5432
+    env_file:
+      - ./pricing/.env
