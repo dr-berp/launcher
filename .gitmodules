@@ -7,3 +7,6 @@
 [submodule "pricing"]
 	path = pricing
 	url = git@github.com:dr-berp/pricing.git
+[submodule "auth"]
+	path = auth
+	url = git@github.com:dr-berp/auth.git
